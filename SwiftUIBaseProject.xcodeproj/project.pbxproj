@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A9405C9B2A6300E100868EFB /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9405C9A2A6300E100868EFB /* CircleImage.swift */; };
 		A9405C9D2A63018000868EFB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9405C9C2A63018000868EFB /* MapView.swift */; };
+		A9405C9F2A6306B200868EFB /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = A9405C9E2A6306B200868EFB /* landmarkData.json */; };
+		A9405CA32A63072400868EFB /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9405CA22A63072400868EFB /* Landmark.swift */; };
+		A9405CA62A630CD900868EFB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9405CA52A630CD900868EFB /* NetworkManager.swift */; };
 		A993426D2A62FB6300DF039E /* SwiftUIBaseProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993426C2A62FB6300DF039E /* SwiftUIBaseProjectApp.swift */; };
 		A993426F2A62FB6300DF039E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993426E2A62FB6300DF039E /* ContentView.swift */; };
 		A99342712A62FB6500DF039E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99342702A62FB6500DF039E /* Assets.xcassets */; };
@@ -18,6 +21,9 @@
 /* Begin PBXFileReference section */
 		A9405C9A2A6300E100868EFB /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		A9405C9C2A63018000868EFB /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		A9405C9E2A6306B200868EFB /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
+		A9405CA22A63072400868EFB /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
+		A9405CA52A630CD900868EFB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A99342692A62FB6300DF039E /* SwiftUIBaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIBaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A993426C2A62FB6300DF039E /* SwiftUIBaseProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBaseProjectApp.swift; sourceTree = "<group>"; };
 		A993426E2A62FB6300DF039E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +42,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9405CA02A6306C100868EFB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A993426C2A62FB6300DF039E /* SwiftUIBaseProjectApp.swift */,
+				A99342702A62FB6500DF039E /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A9405CA12A6306D900868EFB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9405C9A2A6300E100868EFB /* CircleImage.swift */,
+				A9405C9C2A63018000868EFB /* MapView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A9405CA42A63072600868EFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A9405CA22A63072400868EFB /* Landmark.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9405CA72A630DCC00868EFB /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A9405CA52A630CD900868EFB /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		A9405CA82A630DDB00868EFB /* Resounces */ = {
+			isa = PBXGroup;
+			children = (
+				A9405C9E2A6306B200868EFB /* landmarkData.json */,
+			);
+			path = Resounces;
+			sourceTree = "<group>";
+		};
 		A99342602A62FB6300DF039E = {
 			isa = PBXGroup;
 			children = (
@@ -55,11 +103,12 @@
 		A993426B2A62FB6300DF039E /* SwiftUIBaseProject */ = {
 			isa = PBXGroup;
 			children = (
-				A993426C2A62FB6300DF039E /* SwiftUIBaseProjectApp.swift */,
 				A993426E2A62FB6300DF039E /* ContentView.swift */,
-				A9405C9A2A6300E100868EFB /* CircleImage.swift */,
-				A9405C9C2A63018000868EFB /* MapView.swift */,
-				A99342702A62FB6500DF039E /* Assets.xcassets */,
+				A9405CA72A630DCC00868EFB /* Manager */,
+				A9405CA42A63072600868EFB /* Model */,
+				A9405CA82A630DDB00868EFB /* Resounces */,
+				A9405CA12A6306D900868EFB /* Views */,
+				A9405CA02A6306C100868EFB /* Supporting Files */,
 				A99342722A62FB6500DF039E /* Preview Content */,
 			);
 			path = SwiftUIBaseProject;
@@ -133,6 +182,7 @@
 			files = (
 				A99342742A62FB6500DF039E /* Preview Assets.xcassets in Resources */,
 				A99342712A62FB6500DF039E /* Assets.xcassets in Resources */,
+				A9405C9F2A6306B200868EFB /* landmarkData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,10 +193,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9405CA62A630CD900868EFB /* NetworkManager.swift in Sources */,
 				A993426F2A62FB6300DF039E /* ContentView.swift in Sources */,
 				A9405C9D2A63018000868EFB /* MapView.swift in Sources */,
 				A993426D2A62FB6300DF039E /* SwiftUIBaseProjectApp.swift in Sources */,
 				A9405C9B2A6300E100868EFB /* CircleImage.swift in Sources */,
+				A9405CA32A63072400868EFB /* Landmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
