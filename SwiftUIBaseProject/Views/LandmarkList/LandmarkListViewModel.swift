@@ -8,5 +8,5 @@
 import Foundation
 
 struct LandmarkListViewModel {
-    let landMarks: [Landmark] = NetworkManager.setLoadData(from: "landmarkData.json") ?? []
+    let landMarks: [Landmark] = NetworkManager.setLoadData(from: Self.landmarkJsonPath) ?? []
 }

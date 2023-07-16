@@ -19,13 +19,18 @@ struct LandmarkList: View {
                     LandmarkRow(viewModel: .init(selectedLandmark: item))
                 }
             }
-            .navigationTitle("Landmarks")
+            .navigationTitle(Titles.landmarks)
         }
     }
 }
 
 struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkList()
+        let devices = [Devices.iPhoneSE1ndGeneration, Devices.iPhone14Pro]
+        ForEach(devices, id: \.self) { deviceName in
+            LandmarkList()
+                .previewDevice(PreviewDevice(rawValue: deviceName))
+                .previewDisplayName(deviceName)
+        }
     }
 }

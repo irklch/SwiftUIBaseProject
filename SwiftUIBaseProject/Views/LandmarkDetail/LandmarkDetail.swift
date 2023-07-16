@@ -29,20 +29,27 @@ struct LandmarkDetail: View {
                     }
                     .font(.subheadline)
                     Divider()
-                    Text(viewModel.selectedLandMark.description)
+                    Text(Titles.about + .space + viewModel.selectedLandMark.name)
                         .font(.title2)
+                    Text(viewModel.selectedLandMark.description)
                 }
                 .padding()
                 Spacer()
             }
         }
-        .ignoresSafeArea(edges: .top)
         .scrollIndicators(.hidden)
+        .navigationTitle(viewModel.selectedLandMark.name)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct LandmarkDetail_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkDetail(viewModel: .init(selectedLandMark: LandmarkListViewModel().landMarks[3]))
+        let devices = [Devices.iPhoneSE1ndGeneration, Devices.iPhone14Pro]
+        ForEach(devices, id: \.self) { deviceName in
+            LandmarkDetail(viewModel: .init(selectedLandMark: LandmarkListViewModel().landMarks[3]))
+                .previewDevice(PreviewDevice(rawValue: deviceName))
+                .previewDisplayName(deviceName)
+        }
     }
 }

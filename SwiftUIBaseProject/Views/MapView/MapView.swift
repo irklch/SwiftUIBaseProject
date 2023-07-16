@@ -10,11 +10,10 @@ import MapKit
 
 struct MapView: View {
     let viewModel: MapViewModel
-    @State private var region: MKCoordinateRegion
+    @State private var region: MKCoordinateRegion = .init()
 
-    init(viewModel: MapViewModel) {
-        self.viewModel = viewModel
-        self.region = .init(
+    func setupRegion() {
+        region = .init(
             center: viewModel.locationCoordinate,
             span: .init(
                 latitudeDelta: 0.2,
@@ -23,6 +22,9 @@ struct MapView: View {
 
     var body: some View {
         Map(coordinateRegion: $region)
+            .onAppear {
+                setupRegion()
+            }
     }
 }
 
