@@ -12,7 +12,7 @@ struct LandmarkRow: View {
 
     var body: some View {
         HStack {
-            viewModel.selectedLandmark.image
+            Image(viewModel.selectedLandmark.imageName)
                 .resizable()
                 .frame(width: 50.0, height: 50.0)
             Text(viewModel.selectedLandmark.name)
@@ -22,10 +22,9 @@ struct LandmarkRow: View {
 }
 
 struct LandmarkRow_Previews: PreviewProvider {
-    static let landmarks: [Landmark] = NetworkManager.setLoadData(from: "landmarkData.json") ?? []
     static var previews: some View {
         Group {
-            LandmarkRow(viewModel: .init(selectedLandmark: landmarks[0]))
+            LandmarkRow(viewModel: .init(selectedLandmark: LandmarkListViewModel().landMarks[0]))
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }

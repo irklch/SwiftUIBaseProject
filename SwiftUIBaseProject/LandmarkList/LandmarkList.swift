@@ -11,11 +11,16 @@ struct LandmarkList: View {
     let viewModel: LandmarkListViewModel = .init()
 
     var body: some View {
-        List(viewModel.landMarks) { landmark in
-            LandmarkRow(viewModel: .init(selectedLandmark: landmark))
+        NavigationView {
+            List(viewModel.landMarks) { item in
+                NavigationLink {
+                    LandmarkDetail(viewModel: .init(selectedLandMark: item))
+                } label: {
+                    LandmarkRow(viewModel: .init(selectedLandmark: item))
+                }
+            }
+            .navigationTitle("Landmarks")
         }
-        .background(.pink)
-        .scrollContentBackground(.hidden)
     }
 }
 
